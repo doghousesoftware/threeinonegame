@@ -2,21 +2,20 @@ let menuMode = 0
 let userChoice = 0
 let myRandom = 0
 input.onButtonPressed(Button.A, function () {
-    if (menuMode == 0) {
+    if (menuMode != 0) {
         userChoice = 1
-        music.playMelody("C - - G - - - C5 ", 404)
     }
 })
 input.onButtonPressed(Button.AB, function () {
-    if (menuMode == 0) {
+    if (menuMode != 0) {
         userChoice = 3
-        music.playMelody("C - - G - - - C5 ", 404)
     }
 })
 input.onButtonPressed(Button.B, function () {
-    if (menuMode == 0) {
+    if (menuMode != 0) {
         userChoice = 2
-        music.playMelody("C - - G - - - C5 ", 404)
+    } else {
+        userChoice = 2
     }
 })
 input.onGesture(Gesture.Shake, function () {

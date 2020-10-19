@@ -1,25 +1,15 @@
-let menuMode = 0
 let userChoice = 0
 let myRandom = 0
 input.onButtonPressed(Button.A, function () {
-    if (menuMode != 0) {
-        userChoice = 1
-    }
+    userChoice = 1
 })
 input.onButtonPressed(Button.AB, function () {
-    if (menuMode != 0) {
-        userChoice = 3
-    }
+    userChoice = 3
 })
 input.onButtonPressed(Button.B, function () {
-    if (menuMode != 0) {
-        userChoice = 2
-    } else {
-        userChoice = 2
-    }
+    userChoice = 2
 })
 input.onGesture(Gesture.Shake, function () {
-    menuMode = 0
     if (userChoice == 1) {
         myRandom = randint(0, 1)
         if (myRandom == 0) {
@@ -79,9 +69,9 @@ input.onGesture(Gesture.Shake, function () {
         }
     }
     if (userChoice == 3) {
-        myRandom = randint(1, 6)
-        basic.showNumber(myRandom)
+        basic.showNumber(randint(1, 6))
         basic.pause(2000)
         basic.clearScreen()
     }
+    music.playTone(988, music.beat(BeatFraction.Eighth))
 })
